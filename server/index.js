@@ -6,6 +6,8 @@ const port = 3042;
 app.use(cors());
 app.use(express.json());
 
+// key - wallet address
+// value - balance for corresponding wallet address
 const balances = {
   "0x1": 100,
   "0x2": 50,
