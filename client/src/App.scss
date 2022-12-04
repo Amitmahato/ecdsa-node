@@ -9,8 +9,8 @@ label {
   display: flex;
   flex-direction: column;
   letter-spacing: 0.05rem;
-  font-size: .8em;
-  font-weight: 400;
+  font-size: 0.8em;
+  font-weight: 600;
   color: #222;
 }
 
@@ -34,10 +34,6 @@ label {
   label {
     margin: 10px 0;
   }
-
-  .button {
-    margin-top: 10px;
-  }
 }
 
 input {
@@ -47,10 +43,44 @@ input {
   background-color: #fdfdfe;
   padding-inline-start: 0.75rem;
   font-size: 0.875rem;
+
+  &:focus-within {
+    outline: solid 2px #319795;
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.margin-top-five {
+  margin-top: 5px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.font-small {
+  font-size: 0.75em;
+}
+
+.background-gray {
+  padding: 0.75rem;
+  background-color: #f4f6f8;
+  align-items: center;
 }
 
 .button {
   background-color: #319795;
+  border-color: #319795;
+  border-width: 1px;
   border-radius: 0.125rem;
   padding: 10px 20px;
   color: white;
@@ -58,10 +88,43 @@ input {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400;
-  font-size: .9em;
+  font-size: 0.9em;
+  justify-content: center;
   &:hover {
     cursor: pointer;
   }
+  &:disabled {
+    background-color: #319795aa;
+    border-color: #319795aa;
+    color: #ffffffaa;
+    cursor: not-allowed;
+  }
+}
+
+.button-outlined {
+  border-color: #319795;
+  border-width: 1px;
+  border-radius: 0.125rem;
+  padding: 10px 20px;
+  color: #319795;
+  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 0.9em;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.fixed {
+  width: 120px;
+  justify-content: center;
+}
+
+.danger {
+  border-color: #df4759;
+  color: #df4759;
 }
 
 .wallet {
@@ -72,7 +135,18 @@ input {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 400;
-    font-size: .9em;
+    font-size: 0.9em;
+    display: inline-flex;
+    margin-top: 10px;
+    padding: 0.75rem;
+    background-color: #f4f6f8;
+  }
+
+  .address {
+    text-transform: none;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 0.9em;
     display: inline-flex;
     margin-top: 10px;
     padding: 0.75rem;

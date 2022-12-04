@@ -10,7 +10,7 @@ app.use(express.json());
 // value - balance for corresponding wallet address
 const balances = {
   "0x1": 100,
-  "0x2": 50,
+  "0xf3bb44837de36076123386a46db8a64f8e491e82": 50,
   "0x3": 75,
 };
 

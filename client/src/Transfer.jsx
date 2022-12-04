@@ -24,10 +24,14 @@ function Transfer({ address, setBalance }) {
     }
   }
 
+  /**
+   * @todo - sign transaction using the private key for the selected owned address and send funds to the receipient address
+   */
   return (
     <form className="container transfer" onSubmit={transfer}>
       <h1>Send Transaction</h1>
 
+      <label>Sender: {address}</label>
       <label>
         Send Amount
         <input
