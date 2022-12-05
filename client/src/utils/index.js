@@ -1,5 +1,6 @@
 import { keccak256 } from "ethereum-cryptography/keccak";
-import { toHex } from "ethereum-cryptography/utils";
+import { sign } from "ethereum-cryptography/secp256k1";
+import { toHex, utf8ToBytes } from "ethereum-cryptography/utils";
 
 export const generateAddress = (publicKey) => {
   return `0x${toHex(keccak256(publicKey).slice(-20))}`;
@@ -26,4 +27,16 @@ export const addDataToLocalStorage = async (data) => {
 
 export const removeDataFromLocalStorage = async () => {
   localStorage.removeItem("privateKeys");
+};
+
+export const hashMessage = (data) => {
+  return keccak256(utf8ToBytes(JSON.stringify(data)));
+};
+
+export const signMessage = async (
+  hashedMessage,
+  privateKey,
+  recover = true
+) => {
+  return await sign(hashedMessage, privateKey, { recovered: recover });
 };
